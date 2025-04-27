@@ -1,9 +1,11 @@
-//creating file format for hr depattments
-//use role
+--creating file format for hr depattments
+--use role
+
 use role hr_role;
 use database fab_retailers;
 use schema hr;
-//creating file format
+
+--creating file format
 create or replace file format json_format
 type='JSON'
 strip_outer_array=True;
@@ -11,7 +13,7 @@ strip_outer_array=True;
 create or replace file format parquet_format 
 type='parquet';
 
-//Dept-IT
+--Dept-IT
 use role IT_ROLE;
 use database fab_retailers;
 use schema it;
@@ -28,7 +30,7 @@ SKIP_HEADER=1
 field_delimiter=','
 NULL_IF=('\\N','NULL','');
 
-//Dept-Finance
+--Dept-Finance
 use role finance_role;
 use database fab_retailers;
 use schema finance;
@@ -41,7 +43,7 @@ field_delimiter=','
 record_delimiter='\n'
 ;
 
-//Dept sales nd marketing
+--Dept-sales nd marketing
 use role sales_marketing_role;
 use database fab_retailers;
 use schema sales_marketing;
@@ -58,6 +60,7 @@ field_delimiter=',';
 
 
 //CREATING STORAGE INTEGRATION
+
 use role accountadmin;
 
 create or replace storage integration s3_fab_retail_integration
@@ -83,13 +86,14 @@ storage_allowed_locations=
 's3://snowflake-fabretailers-project/sales_marketing/store_sales/');
 
 describe integration s3_fab_retail_integration;
+
 grant usage on integration s3_fab_retail_integration to role hr_role;
 grant usage on integration s3_fab_retail_integration to role it_role;
 grant usage on integration s3_fab_retail_integration to role finance_role;
 grant usage on integration s3_fab_retail_integration to role sales_marketing_role;
 
-//CREATING EXTERNAL STAGES FOR EACH DATA PATH PRESENT IN S3 BUCKET
-//dept-hr-department
+--CREATING EXTERNAL STAGES FOR EACH DATA PATH PRESENT IN S3 BUCKET
+--Dept-hr-department
 
 use role hr_role;
 use database fab_retailers;
@@ -110,7 +114,8 @@ url='s3://snowflake-fabretailers-project/hr-department/performance/'
 storage_integration=s3_fab_retail_integration
 file_format=json_format;
 
-//dept-finance-department
+--Dept-finance-department
+
 use role finance_role;
 use database fab_retailers;
 use schema finance;
@@ -125,7 +130,7 @@ url='s3://snowflake-fabretailers-project/finance/revenue_summary/revenue_summary
 storage_integration=s3_fab_retail_integration
 file_format=csv_format;
 
-//dept-sales_marketing
+--Dept-sales_marketing
 use role sales_marketing_role;
 use database fab_retailers;
 use schema sales_marketing;
@@ -135,7 +140,6 @@ url='s3://snowflake-fabretailers-project/sales-marketing/marketing_campaigns/mar
 storage_integration=s3_fab_retail_integration
 file_format=csv_file_format;
 
-drop stage sales_marketing_store_locations;
 create or replace stage sales_marketing_store_locations
 url='s3://snowflake-fabretailers-project/sales-marketing/store_locations/store_locations.json'
 storage_integration=s3_fab_retail_integration
@@ -147,7 +151,8 @@ storage_integration=s3_fab_retail_integration
 file_format=csv_file_format;
 
 
-//dept-it_department
+--Dept-it_department
+
 use role it_role;
 use database fab_retailers;
 use schema it;
