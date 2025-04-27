@@ -22,6 +22,11 @@ select * from sales_marketing.marketing_campaign_final;
 select * from sales_marketing.store_locations_final;
 select * from sales_marketing.store_sales_final;
 
+--use fab admin role
+--use shared schema
+use role fab_admin;
+use schema shared;
+
 --a SECURE VIEW STORE_JOINED-  JOIN LOCATIONS TABLE AND STORE SALES TABLE SO THAT THE COMBINED DATA CAN BE SHARED WITH END USER WHO REQUIRE THIS DATA 
 
 create or replace secure view SALES_MARKETING_STORE_JOINED
