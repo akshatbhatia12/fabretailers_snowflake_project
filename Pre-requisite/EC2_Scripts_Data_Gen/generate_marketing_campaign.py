@@ -7,7 +7,7 @@ from io import StringIO
 # AWS S3 configuration
 s3_client = boto3.client('s3')
 bucket_name = 'snowflake-fabretailers-project'
-folder_path = 'sales_marketing/marketing_campaigns/'
+folder_path = 'sales-marketing/marketing_campaigns/'
 
 fake = Faker()
 
