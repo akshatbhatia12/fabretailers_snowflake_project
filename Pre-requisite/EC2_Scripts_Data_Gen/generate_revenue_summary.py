@@ -31,4 +31,3 @@ df_revenue.to_csv(csv_buffer, index=False)
 s3_client.put_object(Bucket=bucket_name, Key=folder_path, Body=csv_buffer.getvalue())
 
 print(f"revenue_summary.csv uploaded to {bucket_name}/{folder_path}.")
-
