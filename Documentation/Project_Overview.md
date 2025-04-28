@@ -22,7 +22,7 @@ This project demonstrates the creation of a Snowflake data pipeline for a retail
 
 ## Instructions:
 1. Set up Snowflake account and configure trial account for the project.
-2. Further, please refer to the workflow diagrams for step by step instructions 
+2. Further, please refer to the structure_of_project and workflow diagrams for step by step instructions 
 
 ## Limitations:
 - This project uses a Snowflake trial account with limited data and compute resources.
