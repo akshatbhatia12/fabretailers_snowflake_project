@@ -20,10 +20,30 @@
 │   ├── subsidiary_company_B.sql
 │   └── ...
 ├── 📁 06_Dashboard
-│   ├── 
-│   └── Dashboard_tile.sql
+│   ├── Dashboard_tile.sql
+│   └── Fab_retailers_dashborad.png
+├── 📁 Pre-requisites
+│   ├── 📁 EC2_Scripts_Data_Gen
+│   |    ├── generate_employee_attendance.py
+│   |    ├── generate_employee_performance.py
+│   |    ├── generate_employees.py
+│   |    ├── generate_expense.py
+│   |    ├── generate_it_infrastructure.py
+│   |    ├── generate_live_stream.py
+│   |    ├── generate_marketing_campaign.py
+│   |    ├── generate_revenue_summary.py
+│   |    ├── generate_store_locations.py
+│   |    └── generate_store_sales.py
+|   └── 📁 S3_Bucket_Structure
+│       └──s3_bucket_structure_snippet.png
+|     
 ├── 📁 Documentation
-│   ├── README.md
-│   ├── DataModel_Diagram.png
-│   ├── ER_Diagram.png
-│   └── Project_Overview.md
+│   ├── 📁 Workflows
+│   |    ├──Workflow_Diagram_1=EC2-S3.png
+|   |    ├──Workflow_Diagram_2=01_Setup.png
+|   |    ├──Workflow_Diagram_3=02_Departments.png
+|   |    ├──Workflow_Diagram_4=03_Realtime_Ingestion.png
+|   |    ├──Workflow_Diagram_5=04_Secuity.png
+|   |    ├──Workflow_Diagram_6=05_Subsidiary_Accounts.png
+|   |    └──Workflow_Diagram_7=06_Dashboard.png
+└── └── Project_Overview.md
