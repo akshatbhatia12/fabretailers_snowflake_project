@@ -11,7 +11,7 @@ s3_client = boto3.client('s3')
 bucket_name = 'snowflake-fabretailers-project'
 
 # Folder paths
-hr_folder = 'hr_department/employees/'
+hr_folder = 'hr-department/employees/'
 
 fake = Faker()
 
